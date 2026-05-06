@@ -1,0 +1,223 @@
+<section id="algoritmo" class="mx-auto max-w-7xl px-6 pb-24">
+  <agv-pathfinder class="block rounded-[2rem] bg-graphite p-6 text-concrete shadow-panel md:p-10">
+    <div class="grid gap-10 lg:grid-cols-[.95fr_1.05fr]">
+      <div>
+        <p class="font-bold uppercase tracking-[.28em] text-sage">Algoritmo A*</p>
+        <h2 class="mt-4 text-4xl font-black">Planeamento reativo de rota para um AGV industrial</h2>
+        <p class="mt-5 leading-8 text-concrete/75">
+          O mapa pode ser gerado de forma aleatória controlada. Cada novo mapa cria um problema diferente, mas só é aceite se existir caminho possível entre o início e o destino.
+        </p>
+        <p class="mt-3 rounded-2xl border border-sage/30 bg-sage/10 p-4 text-sm font-semibold leading-6 text-concrete/80">
+          Isto não é random sem regras. O sistema gera obstáculos, testa se há solução e só depois mostra o mapa. É assim que se usa aleatoriedade com responsabilidade.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-white/10 p-4"><b data-steps>0</b><p class="text-sm text-concrete/65">células analisadas</p></div>
+          <div class="rounded-2xl bg-white/10 p-4"><b data-path-length>0</b><p class="text-sm text-concrete/65">passos da rota</p></div>
+          <div class="rounded-2xl bg-white/10 p-4"><b data-status>Pronto</b><p class="text-sm text-concrete/65">estado</p></div>
+        </div>
+
+        <label class="mt-7 block max-w-sm text-sm font-semibold text-concrete/75">
+          Velocidade da simulação
+          <input data-speed class="mt-3 w-full accent-[#b8c398]" type="range" min="10" max="120" value="45" />
+        </label>
+
+        <button data-run class="mt-8 rounded-full bg-sage px-7 py-3 font-black text-graphite transition hover:-translate-y-1 hover:bg-copper">Executar algoritmo</button>
+        <button data-generate class="ml-2 mt-8 rounded-full bg-copper px-7 py-3 font-black text-graphite transition hover:-translate-y-1 hover:bg-sage">Gerar novo mapa</button>
+        <button data-reset class="ml-2 mt-8 rounded-full border border-concrete/20 px-7 py-3 font-black text-concrete transition hover:bg-white/10">Repor</button>
+      </div>
+
+      <div>
+        <div data-grid class="grid grid-cols-10 gap-2 rounded-3xl bg-concrete/95 p-4 shadow-inner"></div>
+        <div class="mt-5 flex flex-wrap gap-4 text-sm text-concrete/70">
+          <span><b class="text-sage">■</b> início</span>
+          <span><b class="text-copper">■</b> destino</span>
+          <span><b class="text-alloy">■</b> analisado</span>
+          <span><b class="text-concrete">■</b> obstáculo/caminho</span>
+        </div>
+      </div>
+    </div>
+  </agv-pathfinder>
+
+  <div class="mt-10 grid gap-5 lg:grid-cols-2">
+    <article class="rounded-3xl bg-white/70 p-7 shadow-lg backdrop-blur">
+      <p class="text-sm font-black uppercase tracking-[.25em] text-steel">Explicação simples</p>
+      <h3 class="mt-3 text-3xl font-black text-graphite">Como se tivesses 5 anos</h3>
+      <p class="mt-4 leading-8 text-steel">
+        Imagina que tens um carrinho de brincar. Cada vez que carregas em “Gerar novo mapa”, alguém espalha blocos no chão. Mas antes de te deixar brincar, confirma que ainda existe uma passagem até ao fim.
+      </p>
+      <p class="mt-4 leading-8 text-steel">
+        O computador faz isto MUITO depressa: olha para as casas à volta, escolhe a mais promissora e continua até chegar ao destino.
+      </p>
+    </article>
+
+    <article class="rounded-3xl bg-white/70 p-7 shadow-lg backdrop-blur">
+      <p class="text-sm font-black uppercase tracking-[.25em] text-steel">Para que serve mesmo?</p>
+      <h3 class="mt-3 text-3xl font-black text-graphite">Na indústria isto simula problemas reais</h3>
+      <p class="mt-4 leading-8 text-steel">
+        Numa fábrica, o espaço muda: aparece uma palete, uma máquina fica ocupada, uma zona é bloqueada. O mapa aleatório mostra isso: o AGV tem de recalcular uma rota segura em vez de decorar sempre o mesmo caminho.
+      </p>
+    </article>
+  </div>
+
+  <div class="mt-5 rounded-3xl bg-graphite p-7 text-concrete shadow-panel">
+    <h3 class="text-3xl font-black">O processo do A*, passo a passo</h3>
+    <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-2xl bg-white/10 p-5">
+        <b class="text-sage">1. Ponto inicial</b>
+        <p class="mt-2 text-sm leading-6 text-concrete/70">O AGV começa na célula verde. É como dizer: “estou aqui”.</p>
+      </div>
+      <div class="rounded-2xl bg-white/10 p-5">
+        <b class="text-sage">2. Obstáculos aleatórios</b>
+        <p class="mt-2 text-sm leading-6 text-concrete/70">As células escuras mudam quando geras mapa: podem representar máquinas, caixas ou áreas perigosas.</p>
+      </div>
+      <div class="rounded-2xl bg-white/10 p-5">
+        <b class="text-sage">3. Custo real</b>
+        <p class="mt-2 text-sm leading-6 text-concrete/70">Cada passo custa 1. Quanto mais passos, mais caro fica esse caminho.</p>
+      </div>
+      <div class="rounded-2xl bg-white/10 p-5">
+        <b class="text-sage">4. Estimativa</b>
+        <p class="mt-2 text-sm leading-6 text-concrete/70">O algoritmo mede “mais ou menos” a distância até ao destino, sem atravessar paredes.</p>
+      </div>
+    </div>
+    <p class="mt-6 rounded-2xl bg-concrete p-5 font-semibold leading-8 text-graphite">
+      Fórmula principal: <span class="font-black">f = g + h</span>. <span class="font-black">g</span> é o caminho já percorrido. <span class="font-black">h</span> é a estimativa até ao destino. O A* escolhe primeiro a célula com menor <span class="font-black">f</span>.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { generateValidWalls, isSameNode, nodeKey, runAStar } from '../lib/pathfinding';
+
+  class AGVPathfinder extends HTMLElement {
+    rows = 10;
+    cols = 10;
+    start = { r: 8, c: 1 };
+    end = { r: 1, c: 8 };
+    defaultWalls = ['1,3','2,3','3,3','4,3','5,3','5,4','5,5','5,6','2,6','3,6','4,6','7,6','8,6','7,2','7,3','7,4'];
+    walls = new Set(this.defaultWalls);
+    visited = new Set();
+    path = new Set();
+    running = false;
+    stats = { steps: 0, pathLength: 0, status: 'Pronto' };
+
+    connectedCallback() {
+      this.gridEl = this.querySelector('[data-grid]');
+      this.stepsEl = this.querySelector('[data-steps]');
+      this.pathLengthEl = this.querySelector('[data-path-length]');
+      this.statusEl = this.querySelector('[data-status]');
+      this.speedEl = this.querySelector('[data-speed]');
+      this.querySelector('[data-run]').addEventListener('click', () => this.animateAStar());
+      this.querySelector('[data-generate]').addEventListener('click', () => this.generateMap());
+      this.querySelector('[data-reset]').addEventListener('click', () => this.reset());
+      this.render();
+    }
+
+    isFixed(node) {
+      return isSameNode(node, this.start) || isSameNode(node, this.end);
+    }
+
+    sleep() {
+      return new Promise((resolve) => setTimeout(resolve, Number(this.speedEl.value)));
+    }
+
+    setStats(nextStats) {
+      this.stats = { ...this.stats, ...nextStats };
+      this.stepsEl.textContent = String(this.stats.steps);
+      this.pathLengthEl.textContent = String(this.stats.pathLength);
+      this.statusEl.textContent = this.stats.status;
+    }
+
+    reset() {
+      if (this.running) return;
+      this.walls = new Set(this.defaultWalls);
+      this.visited.clear();
+      this.path.clear();
+      this.setStats({ steps: 0, pathLength: 0, status: 'Pronto' });
+      this.render();
+    }
+
+    generateMap() {
+      if (this.running) return;
+
+      const generatedWalls = generateValidWalls({
+        rows: this.rows,
+        cols: this.cols,
+        start: this.start,
+        end: this.end
+      });
+
+      if (!generatedWalls) {
+        this.setStats({ status: 'Não consegui gerar rota' });
+        return;
+      }
+
+      this.walls = generatedWalls;
+      this.visited.clear();
+      this.path.clear();
+      this.setStats({ steps: 0, pathLength: 0, status: 'Novo mapa' });
+      this.render();
+    }
+
+    render() {
+      this.gridEl.innerHTML = '';
+      for (let r = 0; r < this.rows; r++) {
+        for (let c = 0; c < this.cols; c++) {
+          const node = { r, c };
+          const key = nodeKey(node);
+          const cell = document.createElement('button');
+          cell.className = 'cell';
+          cell.type = 'button';
+          cell.title = `Linha ${r + 1}, Coluna ${c + 1}`;
+          if (this.walls.has(key)) cell.classList.add('wall');
+          if (this.visited.has(key)) cell.classList.add('visited');
+          if (this.path.has(key)) cell.classList.add('path');
+          if (isSameNode(node, this.start)) cell.classList.add('start');
+          if (isSameNode(node, this.end)) cell.classList.add('end');
+          this.gridEl.appendChild(cell);
+        }
+      }
+    }
+
+    async animateAStar() {
+      if (this.running) return;
+      this.running = true;
+      this.visited.clear();
+      this.path.clear();
+      this.setStats({ steps: 0, pathLength: 0, status: 'A calcular' });
+      this.render();
+
+      const result = runAStar(this.rows, this.cols, this.start, this.end, this.walls);
+
+      for (const node of result.analysedOrder) {
+        this.setStats({ steps: this.stats.steps + 1 });
+        if (!this.isFixed(node)) {
+          this.visited.add(nodeKey(node));
+          this.render();
+          await this.sleep();
+        }
+      }
+
+      if (!result.found) {
+        this.setStats({ status: 'Sem rota' });
+        this.running = false;
+        return;
+      }
+
+      this.setStats({ pathLength: result.route.length - 1, status: 'Rota encontrada' });
+      for (const node of result.route) {
+        if (!this.isFixed(node)) {
+          this.path.add(nodeKey(node));
+          this.render();
+          await this.sleep();
+        }
+      }
+
+      this.running = false;
+    }
+  }
+
+  if (!customElements.get('agv-pathfinder')) {
+    customElements.define('agv-pathfinder', AGVPathfinder);
+  }
+</script>

@@ -1,0 +1,44 @@
+:root {
+  --steel: #5f6e74;
+  --graphite: #273138;
+  --alloy: #818da1;
+  --concrete: #f6f2ee;
+  --copper: #dacbb8;
+  --sage: #b8c398;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(184, 195, 152, .35), transparent 30%),
+    radial-gradient(circle at 86% 10%, rgba(218, 203, 184, .45), transparent 26%),
+    linear-gradient(135deg, #f6f2ee 0%, #eef0ec 52%, #dfe4dd 100%);
+  color: var(--graphite);
+}
+
+.factory-grid {
+  background-image:
+    linear-gradient(rgba(95, 110, 116, .10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 110, 116, .10) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: 1px solid rgba(39, 49, 56, .12);
+  background: rgba(246, 242, 238, .82);
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.cell:hover { transform: translateY(-2px); }
+.cell.wall { background: #5f6e74; box-shadow: inset 0 0 0 2px rgba(39,49,56,.25); }
+.cell.start { background: #b8c398; box-shadow: 0 0 0 4px rgba(184,195,152,.28); }
+.cell.end { background: #dacbb8; box-shadow: 0 0 0 4px rgba(218,203,184,.34); }
+.cell.visited { background: rgba(129, 141, 161, .48); }
+.cell.path { background: #273138; box-shadow: 0 10px 22px rgba(39,49,56,.25); }
+
+.arm-joint { animation: pulseJoint 2.6s infinite ease-in-out; transform-origin: center; }
+@keyframes pulseJoint {
+  0%, 100% { transform: scale(1); opacity: .9; }
+  50% { transform: scale(1.18); opacity: 1; }
+}

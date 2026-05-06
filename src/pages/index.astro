@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ConceptCards from '../components/ConceptCards.astro';
+import AGVPathfinder from '../components/AGVPathfinder.astro';
+import ConclusionCTA from '../components/ConclusionCTA.astro';
+---
+
+<BaseLayout>
+  <Hero />
+  <main>
+    <ConceptCards />
+    <AGVPathfinder />
+    <ConclusionCTA />
+  </main>
+  <footer class="border-t border-graphite/10 px-6 py-8 text-center text-sm text-steel">
+    Paleta gerada via Colormind API: steel, graphite, concrete, copper e sage — estética industrial sem neon genérico.
+  </footer>
+</BaseLayout>

@@ -1,0 +1,17 @@
+{
+  "name": "roboflux-astro",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "astro": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {}
+}

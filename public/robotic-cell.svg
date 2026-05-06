@@ -1,0 +1,121 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Célula robotizada industrial</title>
+  <desc id="desc">Ilustração vetorial original de uma célula robotizada com braço robótico, tapete transportador, AGV, sensores, painel de controlo e barreiras de segurança.</desc>
+  <defs>
+    <linearGradient id="bg" x1="126" y1="90" x2="1025" y2="817" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F2EE"/>
+      <stop offset=".55" stop-color="#E8E5DA"/>
+      <stop offset="1" stop-color="#DACBB8"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="197" y1="266" x2="892" y2="656" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8E9BAD"/>
+      <stop offset="1" stop-color="#5F6E74"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="474" y1="194" x2="840" y2="622" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3C4951"/>
+      <stop offset="1" stop-color="#273138"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="26" flood-color="#273138" flood-opacity=".18"/>
+    </filter>
+    <filter id="smallShadow" x="0" y="0" width="1200" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#273138" flood-opacity=".16"/>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#5F6E74" stroke-opacity=".13" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <rect x="70" y="72" width="1060" height="726" rx="56" fill="url(#grid)" opacity=".85"/>
+
+  <g filter="url(#shadow)">
+    <path d="M188 612L478 444L936 610L646 782L188 612Z" fill="#C9D1BF"/>
+    <path d="M188 612L478 444L936 610L646 782L188 612Z" stroke="#F6F2EE" stroke-width="8"/>
+    <path d="M247 612L491 472L874 611L632 753L247 612Z" fill="#F6F2EE" fill-opacity=".55"/>
+  </g>
+
+  <g opacity=".78">
+    <path d="M279 594L508 462" stroke="#5F6E74" stroke-width="5" stroke-dasharray="18 18"/>
+    <path d="M392 681L765 468" stroke="#5F6E74" stroke-width="5" stroke-dasharray="18 18"/>
+    <path d="M704 737L909 617" stroke="#5F6E74" stroke-width="5" stroke-dasharray="18 18"/>
+  </g>
+
+  <g filter="url(#smallShadow)">
+    <path d="M296 531L595 358L838 447L538 621L296 531Z" fill="url(#steel)"/>
+    <path d="M296 531V590L538 681V621L296 531Z" fill="#5F6E74"/>
+    <path d="M538 621L838 447V506L538 681V621Z" fill="#4C5B61"/>
+    <path d="M338 534L596 385L795 458L536 608L338 534Z" fill="#E9E3D8" opacity=".72"/>
+    <path d="M402 520L465 484L530 508L467 545L402 520Z" fill="#DACBB8"/>
+    <path d="M534 474L600 436L671 462L605 500L534 474Z" fill="#B8C398"/>
+    <path d="M643 514L711 475L774 498L707 537L643 514Z" fill="#DACBB8"/>
+  </g>
+
+  <g filter="url(#smallShadow)">
+    <path d="M720 259L812 206L893 235L801 289L720 259Z" fill="#4C5B61"/>
+    <path d="M720 259V447L801 478V289L720 259Z" fill="#273138"/>
+    <path d="M801 289L893 235V421L801 478V289Z" fill="#3B474E"/>
+    <path d="M744 290L792 262L844 281L796 310L744 290Z" fill="#B8C398"/>
+    <path d="M744 317L792 289L844 308L796 337L744 317Z" fill="#F6F2EE" opacity=".85"/>
+    <circle cx="767" cy="381" r="12" fill="#DACBB8"/>
+    <circle cx="804" cy="397" r="12" fill="#818DA1"/>
+    <circle cx="839" cy="379" r="12" fill="#B8C398"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M346 633L449 573L548 609L443 670L346 633Z" fill="#4E5F66"/>
+    <path d="M346 633V679L443 716V670L346 633Z" fill="#273138"/>
+    <path d="M443 670L548 609V653L443 716V670Z" fill="#5F6E74"/>
+    <path d="M393 604L446 574L495 591L442 623L393 604Z" fill="#B8C398"/>
+    <circle cx="391" cy="686" r="20" fill="#1F282E"/>
+    <circle cx="489" cy="650" r="20" fill="#1F282E"/>
+    <text x="414" y="668" fill="#F6F2EE" font-size="32" font-family="Arial, sans-serif" font-weight="800" transform="rotate(-21 414 668)">AGV</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M566 645L675 582L767 616L657 679L566 645Z" fill="#5F6E74"/>
+    <path d="M566 645V694L657 729V679L566 645Z" fill="#273138"/>
+    <path d="M657 679L767 616V664L657 729V679Z" fill="#4B5B61"/>
+    <path d="M609 617L669 582L720 601L660 637L609 617Z" fill="#273138"/>
+    <ellipse cx="664" cy="610" rx="48" ry="24" transform="rotate(-30 664 610)" fill="#5F6E74"/>
+    <ellipse cx="664" cy="610" rx="22" ry="11" transform="rotate(-30 664 610)" fill="#273138"/>
+    <path d="M661 602L599 456" stroke="#5F6E74" stroke-width="50" stroke-linecap="round"/>
+    <ellipse cx="599" cy="456" rx="42" ry="26" transform="rotate(-28 599 456)" fill="#273138"/>
+    <path d="M599 456L486 380" stroke="#818DA1" stroke-width="42" stroke-linecap="round"/>
+    <ellipse cx="486" cy="380" rx="36" ry="24" transform="rotate(-18 486 380)" fill="#273138"/>
+    <path d="M486 380L520 303" stroke="#5F6E74" stroke-width="31" stroke-linecap="round"/>
+    <path d="M520 303L568 282" stroke="#273138" stroke-width="18" stroke-linecap="round"/>
+    <path d="M568 282L598 260M568 282L603 302" stroke="#273138" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#smallShadow)">
+    <path d="M222 409L262 386L303 401L263 425L222 409Z" fill="#F6F2EE" stroke="#5F6E74" stroke-width="6"/>
+    <path d="M222 409V500L263 516V425L222 409Z" fill="#E8E1D6" stroke="#5F6E74" stroke-width="6"/>
+    <path d="M263 425L303 401V491L263 516V425Z" fill="#CFC7BA" stroke="#5F6E74" stroke-width="6"/>
+    <circle cx="248" cy="448" r="10" fill="#B8C398"/>
+    <path d="M262 386L464 266" stroke="#B8C398" stroke-width="8" stroke-linecap="round" stroke-dasharray="16 18"/>
+  </g>
+
+  <g filter="url(#smallShadow)">
+    <path d="M887 502L930 477L973 493L930 518L887 502Z" fill="#F6F2EE" stroke="#5F6E74" stroke-width="6"/>
+    <path d="M887 502V589L930 606V518L887 502Z" fill="#E8E1D6" stroke="#5F6E74" stroke-width="6"/>
+    <path d="M930 518L973 493V580L930 606V518Z" fill="#CFC7BA" stroke="#5F6E74" stroke-width="6"/>
+    <circle cx="916" cy="540" r="10" fill="#B8C398"/>
+    <path d="M930 477L765 378" stroke="#B8C398" stroke-width="8" stroke-linecap="round" stroke-dasharray="16 18"/>
+  </g>
+
+  <g opacity=".95">
+    <path d="M181 446L219 424M219 424L259 438M259 438L222 461M222 461L181 446Z" fill="#DACBB8" stroke="#5F6E74" stroke-width="5"/>
+    <path d="M181 446V563L222 581V461L181 446Z" fill="#BFAE98" stroke="#5F6E74" stroke-width="5"/>
+    <path d="M222 461L259 438V552L222 581V461Z" fill="#DACBB8" stroke="#5F6E74" stroke-width="5"/>
+    <path d="M930 338L969 315M969 315L1008 330M1008 330L970 354M970 354L930 338Z" fill="#DACBB8" stroke="#5F6E74" stroke-width="5"/>
+    <path d="M930 338V455L970 473V354L930 338Z" fill="#BFAE98" stroke="#5F6E74" stroke-width="5"/>
+    <path d="M970 354L1008 330V444L970 473V354Z" fill="#DACBB8" stroke="#5F6E74" stroke-width="5"/>
+  </g>
+
+  <g>
+    <rect x="92" y="82" width="424" height="112" rx="34" fill="#F6F2EE" fill-opacity=".88"/>
+    <text x="126" y="130" fill="#273138" font-size="42" font-family="Arial, sans-serif" font-weight="900">Célula robotizada</text>
+    <text x="128" y="166" fill="#5F6E74" font-size="24" font-family="Arial, sans-serif" font-weight="700">robô • AGV • sensores • controlo</text>
+  </g>
+</svg>

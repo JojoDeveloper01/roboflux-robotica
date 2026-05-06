@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+const { title = 'RoboFlux — Robótica e Automação Industrial' } = Astro.props;
+---
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              steel: '#5f6e74',
+              graphite: '#273138',
+              alloy: '#818da1',
+              concrete: '#f6f2ee',
+              copper: '#dacbb8',
+              sage: '#b8c398'
+            },
+            boxShadow: {
+              panel: '0 24px 80px rgba(39, 49, 56, .18)'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="min-h-screen antialiased">
+    <slot />
+  </body>
+</html>
